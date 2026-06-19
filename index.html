@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>c7娱乐 · 快速识别平台用途</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: linear-gradient(145deg, #fbe9d2 0%, #f7dac1 40%, #f3cba6 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.2rem;
+      line-height: 1.6;
+      color: #2c221a;
+    }
+
+    .page {
+      max-width: 980px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    /* 白色柔和卡片 */
+    .card {
+      background: rgba(255, 252, 245, 0.85);
+      backdrop-filter: blur(2px);
+      border-radius: 32px;
+      padding: 2rem 2.2rem;
+      box-shadow: 0 8px 24px rgba(140, 80, 30, 0.08), 0 2px 6px rgba(0, 0, 0, 0.02);
+      transition: box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 32px rgba(140, 80, 30, 0.12);
+    }
+
+    /* hero 区域 */
+    .hero {
+      text-align: center;
+      padding: 3.2rem 2rem 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      background: linear-gradient(135deg, #b1561f, #88471a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.6rem;
+    }
+
+    .hero .tagline {
+      font-size: 1.2rem;
+      color: #5a3e2b;
+      max-width: 560px;
+      margin: 0.4rem auto 1.2rem;
+      font-weight: 400;
+    }
+
+    .hero .sub {
+      font-size: 0.95rem;
+      color: #7f5c40;
+      background: rgba(243, 203, 166, 0.4);
+      display: inline-block;
+      padding: 0.25rem 1.2rem;
+      border-radius: 40px;
+      margin-top: 0.2rem;
+    }
+
+    /* 优势网格 */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .feature-item {
+      background: white;
+      border-radius: 24px;
+      padding: 1.5rem 1.2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(255, 235, 210, 0.6);
+      transition: transform 0.1s ease;
+    }
+
+    .feature-item h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #7d4d28;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      color: #4b392a;
+    }
+
+    /* 说明区 + 段落 */
+    .desc-block {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .desc-block h2 {
+      font-size: 1.6rem;
+      font-weight: 550;
+      color: #653f24;
+      border-left: 6px solid #c0845a;
+      padding-left: 1rem;
+    }
+
+    .desc-block p {
+      font-size: 1rem;
+      color: #3b2e23;
+    }
+
+    .inline-link {
+      color: #9a5f2e;
+      font-weight: 500;
+      text-decoration: none;
+      border-bottom: 2px solid #eac5a6;
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .inline-link:hover {
+      border-bottom-color: #9a5f2e;
+      color: #6f421e;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.4rem;
+      font-weight: 550;
+      color: #653f24;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #eddccb;
+      padding-bottom: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-q {
+      font-weight: 550;
+      color: #542f18;
+      margin-bottom: 0.2rem;
+      font-size: 1rem;
+    }
+
+    .faq-a {
+      color: #4b392a;
+      font-size: 0.92rem;
+    }
+
+    /* 底部链接 */
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem 2rem;
+      padding: 1.5rem 0.5rem;
+      border-top: 1px solid #e7cfb7;
+      margin-top: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #5f432e;
+      text-decoration: none;
+      font-size: 0.95rem;
+      padding: 0.2rem 0.4rem;
+      border-radius: 40px;
+      background: rgba(255, 247, 235, 0.7);
+      padding: 0.3rem 1rem;
+      transition: background 0.2s, color 0.15s;
+      font-weight: 450;
+    }
+
+    .footer-links a:hover {
+      background: #eaceb5;
+      color: #2d1c10;
+    }
+
+    .copyright {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #7e624b;
+      padding-top: 0.4rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 700px) {
+      body {
+        padding: 1.2rem 0.8rem;
+      }
+      .card {
+        padding: 1.5rem 1.2rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .grid-3 {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .feature-item {
+        padding: 1.2rem;
+      }
+      .hero {
+        padding: 2rem 1rem;
+      }
+      .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+      }
+    }
+
+    @media (max-width: 450px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .desc-block h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <!-- hero 区 -->
+  <div class="card hero">
+    <h1>c7娱乐</h1>
+    <div class="tagline">从名称快速识别 · 一站式休闲导向</div>
+    <div class="sub">平台定位清晰，专注特定娱乐内容聚合</div>
+  </div>
+
+  <!-- 优势区：三卡片网格 -->
+  <div class="grid-3">
+    <div class="feature-item">
+      <h3>🎲 明确主题</h3>
+      <p>围绕固定 IP 体系构建内容，用户进入后可迅速判断是否符合自身兴趣。</p>
+    </div>
+    <div class="feature-item">
+      <h3>📂 功能分区</h3>
+      <p>页面结构按模块划分，资讯、互动、资源分类清晰，降低浏览成本。</p>
+    </div>
+    <div class="feature-item">
+      <h3>⚙️ 轻量操作</h3>
+      <p>无需复杂注册流程即可预览主要板块，适合快速体验与评估。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：自然描述 + 含链接句子 -->
+  <div class="card desc-block">
+    <h2>这个网站做什么用？</h2>
+    <p>
+      如果你正在寻找一个主题集中的娱乐信息平台，<a href="https://zh-c7entertainments.com" class="inline-link">c7娱乐</a>
+      提供围绕特定数字系列的内容聚合。这里不涉及第三方跳转或冗余广告，页面主要展示与品牌相关的资讯、素材索引以及社区互动入口。
+    </p>
+    <p>
+      无论你是想了解最新动态，还是检索历史资料，都能在站内找到对应分区。整体设计优先考虑信息可读性，减少视觉干扰，让访问者把注意力留在内容本身。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="card faq-mini">
+    <h2>常见疑问摘要</h2>
+    <div class="faq-item">
+      <div class="faq-q">🔍 这个平台适合哪类用户？</div>
+      <div class="faq-a">对特定编号系列娱乐内容感兴趣的访客，以及希望集中获取相关资讯的人。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">📄 是否需要付费才能浏览？</div>
+      <div class="faq-a">目前站内主要信息页面均免费开放，部分互动功能可能视情况设置门槛。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">🌐 网站是否支持移动端？</div>
+      <div class="faq-a">页面采用响应式布局，手机与平板均可正常阅读和导航。</div>
+    </div>
+    <div style="margin-top:0.2rem; font-size:0.9rem; color:#684f39;">
+      更多细节可浏览站内各分区说明。
+    </div>
+  </div>
+
+  <!-- 底部链接区 -->
+  <div class="card" style="padding-bottom:1.2rem;">
+    <div class="footer-links">
+      <a href="https://zh-c7entertainments.com">c7娱乐</a>
+      <a href="#">内容索引</a>
+      <a href="#">常见问题</a>
+      <a href="#">动态公告</a>
+    </div>
+    <div class="copyright">
+      © 信息参考页 · 非官方版本
+    </div>
+  </div>
+</div>
+</body>
+</html>

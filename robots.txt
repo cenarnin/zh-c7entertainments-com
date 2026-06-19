@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cenarnin.github.io/zh-c7entertainments-com/sitemap.xml
